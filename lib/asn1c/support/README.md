@@ -24,6 +24,47 @@ user@host ~/Documents/git/open5gs/lib/asn1c/ngap$ \
     -fcompound-names -findirect-choice -fno-include-deps \
     ../support/ngap-r16.1.0/38413-g10.asn
 
+Fix S1AP_E-RABUsageReportItem.c
+===========================================
+diff --git a/lib/asn1c/s1ap/S1AP_E-RABUsageReportItem.c b/lib/asn1c/s1ap/S1AP_E-RABUsageReportItem.c
+index c8e6d551..73aae4fd 100644
+--- a/lib/asn1c/s1ap/S1AP_E-RABUsageReportItem.c
++++ b/lib/asn1c/s1ap/S1AP_E-RABUsageReportItem.c
+@@ -80,7 +80,7 @@ memb_S1AP_usageCountUL_constraint_1(const asn_TYPE_descriptor_t *td, const void
+                return -1;
+        }
+
+-       if((value >= 0 && value <= 18446744073709551615)) {
++       if((value >= 0 && value <= 18446744073709551615U)) {
+                /* Constraint check succeeded */
+                return 0;
+        } else {
+@@ -111,7 +111,7 @@ memb_S1AP_usageCountDL_constraint_1(const asn_TYPE_descriptor_t *td, const void
+                return -1;
+        }
+
+-       if((value >= 0 && value <= 18446744073709551615)) {
++       if((value >= 0 && value <= 18446744073709551615U)) {
+                /* Constraint check succeeded */
+                return 0;
+        } else {
+@@ -142,7 +142,7 @@ static asn_oer_constraints_t asn_OER_memb_S1AP_usageCountUL_constr_4 CC_NOTUSED
+        { 8, 1 }        /* (0..18446744073709551615) */,
+        -1};
+ static asn_per_constraints_t asn_PER_memb_S1AP_usageCountUL_constr_4 CC_NOTUSED = {
+-       { APC_CONSTRAINED,       64, -1,  0,  18446744073709551615 }    /* (0..18446744073709551615) */,
++       { APC_CONSTRAINED,       64, -1,  0,  18446744073709551615U }   /* (0..18446744073709551615) */,
+        { APC_UNCONSTRAINED,    -1, -1,  0,  0 },
+        0, 0    /* No PER value map */
+ };
+@@ -150,7 +150,7 @@ static asn_oer_constraints_t asn_OER_memb_S1AP_usageCountDL_constr_5 CC_NOTUSED
+        { 8, 1 }        /* (0..18446744073709551615) */,
+        -1};
+ static asn_per_constraints_t asn_PER_memb_S1AP_usageCountDL_constr_5 CC_NOTUSED = {
+-       { APC_CONSTRAINED,       64, -1,  0,  18446744073709551615 }    /* (0..18446744073709551615) */,
++       { APC_CONSTRAINED,       64, -1,  0,  18446744073709551615U }   /* (0..18446744073709551615) */,
+        { APC_UNCONSTRAINED,    -1, -1,  0,  0 },
+
 Fix NGAP_ProtocolExtensionField.c
 ===========================================
 diff --git a/lib/asn1c/ngap/NGAP_ProtocolExtensionField.c b/lib/asn1c/ngap/NGAP_ProtocolExtensionField.c
