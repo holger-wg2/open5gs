@@ -1,8 +1,3 @@
-Modify 36413-e40.txt to 36413-e40.asn
-===========================================
-user@host ~/Documents/git/nextgnb/lib/asn1c/support/s1ap-r14.4.0$ \
-    diff 36413-e40.txt 36413-e40.asn
-
 Use velichkov git's fork for asn1c
 ===========================================
 user@host ~/Documents/git/my$ \
@@ -12,13 +7,19 @@ user@host ~/Documents/git/my$ \
 user@host Documents/git/my/asn1c$ \
     autoreconf -fi;./configure;make -j4
 
+Modify 36413-g10.txt to 36413-g10.asn
+===========================================
+user@host ~/documents/git/open5gs/lib/asn1c/support/s1ap-r16.1.0$ \
+    diff 36413-g40.txt 36413-g10.asn
+
 ASN.1 encoder/decoder
 ===========================================
-user@host ~/Documents/git/open5gs/lib/asn1c/s1ap$ \
+user@host ~/documents/git/open5gs/lib/asn1c/s1ap$ \
     ASN1C_PREFIX=S1AP_ ../../../../my/asn1c/asn1c/asn1c -pdu=all \
     -fcompound-names -findirect-choice -fno-include-deps \
-    ../support/s1ap-r14.4.0/36413-e40.asn
+    ../support/s1ap-r16.1.0/36413-g10.asn
 
+user@host ~/Documents/git/open5gs/lib/asn1c/ngap$ \
     ASN1C_PREFIX=NGAP_ ../../../../my/asn1c/asn1c/asn1c -pdu=all \
     -fcompound-names -findirect-choice -fno-include-deps \
     ../support/ngap-r16.1.0/38413-g10.asn
@@ -83,16 +84,11 @@ index 26da1b34..940db758 100644
 Check common file
 ===========================================
 user@host ~/Documents/git/open5gs/lib/asn1c/common$ \
-    ls
-
-user@host ~/Documents/git/open5gs/lib/asn1c/common$ \
     git diff asn_internal.h
 
 Check meson.build
 ===========================================
 user@host ~/Documents/git/open5gs/lib/asn1c/s1ap$ \
-    cat Makefile.am.libasncodec
-
 user@host ~/Documents/git/open5gs/lib/asn1c/ngap$ \
     cat Makefile.am.libasncodec
 
@@ -113,4 +109,3 @@ user@host ~/Documents/git/open5gs/lib/asn1c/s1ap$ \
 
 user@host ~/Documents/git/open5gs/lib/asn1c/s1ap$ \
     rm -f converter-example.mk converter-example.c pdu_collection.c
-
