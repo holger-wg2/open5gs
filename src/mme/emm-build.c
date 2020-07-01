@@ -107,7 +107,7 @@ ogs_pkbuf_t *emm_build_attach_accept(
 
     attach_accept->presencemask |= 
         OGS_NAS_EPS_ATTACH_ACCEPT_EPS_NETWORK_FEATURE_SUPPORT_PRESENT;
-    eps_network_feature_support->length = 1;
+    eps_network_feature_support->length = 2;
     eps_network_feature_support->ims_vops = 1;
 
     if (MME_P_TMSI_IS_AVAILABLE(mme_ue)) {
