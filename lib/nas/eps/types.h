@@ -681,7 +681,7 @@ typedef struct ogs_nas_ue_additional_security_capability_s {
             uint8_t nea6:1;,
             uint8_t nea7:1;)
         };
-        uint8_t nea_0_7;
+        uint8_t nea;
     };
     union {
         struct {
@@ -707,7 +707,7 @@ typedef struct ogs_nas_ue_additional_security_capability_s {
             uint8_t nia6:1;,
             uint8_t nia7:1;)
         };
-        uint8_t nia_0_7;
+        uint8_t nia;
     };
     union {
         struct {
